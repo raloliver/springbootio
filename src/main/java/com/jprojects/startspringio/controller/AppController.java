@@ -10,8 +10,16 @@ public class AppController {
     @Value("${app.message}")
     private String appMessage;
 
+    @Value("${ENV_URL:NULL}")
+    private String dbEnvVar;
+
     @GetMapping("/app")
     public String getAppMessage() {
         return appMessage;
+    }
+
+    @GetMapping("/env")
+    public String getDbEnvVar() {
+        return "Ambiente ativo: " + dbEnvVar;
     }
 }
