@@ -1,4 +1,4 @@
-package com.jprojects.startspringio;
+package com.jprojects.startspringio.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +10,7 @@ public class AppController {
     @Value("${app.message}")
     private String appMessage;
 
-    @GetMapping("/")
+    @GetMapping("/app")
     public String getAppMessage() {
         return appMessage;
     }
